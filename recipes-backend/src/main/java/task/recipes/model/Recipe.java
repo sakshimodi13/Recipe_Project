@@ -1,0 +1,31 @@
+package task.recipes.model;
+
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+import reactor.core.publisher.Mono;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Document
+@Data
+@Builder(toBuilder = true)
+
+public class Recipe {
+
+    @Id
+    private String id;
+
+    private String name;
+    private LocalDateTime created;
+    private boolean vegan;
+    private int servings;
+    private List<String> ingredients;
+    private String instructions;
+    
+
+}
